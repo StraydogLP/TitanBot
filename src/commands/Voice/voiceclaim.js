@@ -1,4 +1,3 @@
-console.log('🟢 LOADING COMMAND: [voiceclaim]'); // z.B. voicelimit.js
 import { SlashCommandBuilder } from 'discord.js';
 import { getTemporaryChannelInfo, getJoinToCreateConfig, formatChannelName } from '../../utils/database.js';
 import { logger } from '../../utils/logger.js';
