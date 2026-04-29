@@ -197,7 +197,7 @@ userLimit: userLimit === 0 ? undefined : userLimit,
                     ]
                 });
 
-                await registerTemporaryChannel(client, guild.id, tempChannel.id, member.id, triggerChannel.id);
+                await registerTemporaryChannel(client, guild.id, tempChannel.id, member.id, triggerChannel.id, false);
 
                 if (member.voice?.channel?.id === triggerChannel.id) {
                     await member.voice.setChannel(tempChannel);
