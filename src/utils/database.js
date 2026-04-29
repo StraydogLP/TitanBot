@@ -2152,14 +2152,15 @@ export async function removeJoinToCreateTrigger(client, guildId, channelId) {
 
 
 
-export async function registerTemporaryChannel(client, guildId, channelId, ownerId, triggerChannelId) {
+export async function registerTemporaryChannel(client, guildId, channelId, ownerId, triggerChannelId, isLocked = false) {
     try {
         const config = await getJoinToCreateConfig(client, guildId);
         
         config.temporaryChannels[channelId] = {
             ownerId,
             triggerChannelId,
-            createdAt: Date.now()
+            createdAt: Date.now(),
+            isLocked: isLocked
         };
         
         return await saveJoinToCreateConfig(client, guildId, config);
